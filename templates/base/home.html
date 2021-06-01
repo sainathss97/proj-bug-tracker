@@ -1,0 +1,54 @@
+{% include 'base/froyo.html' %}
+
+
+<div class = 'container' style="width: 150 px; height:150 px;">
+
+<div class="card" >
+       
+    {% for item in task %}
+        {% if item.complete %}
+
+            <div class='container'>
+                <p></p>
+                <p><i><s><H2>{{item}} </H2>
+                </s></i>
+                
+                <a class = 'btn btn-light' href="{% url 'task-update' item.id %}">Update</a>
+                <a class="delete-link btn btn-light" href="{% url 'task-delete' item.id %}">Delete</a>
+                <a class = 'btn btn-light' href="{% url 'task-list' item.id %}">View</a> 
+             </p>
+            </div>
+                   
+
+
+        {% else %}
+        <div class="container">
+            <p> <h2>{{item}} </h2>
+                <a class = 'btn btn-light' href="{% url 'task-update' item.id %}">Update</a>
+                <a class="delete-link btn btn-light" href="{% url 'task-delete' item.id %}">Delete</a>
+                <a class = 'btn btn-light' href="{% url 'task-list' item.id %}">View</a> 
+            </p>
+            
+        </div>
+        {% endif %}
+            <hr>
+        <p>   </p>
+    {% empty %}
+    No Projects Found!
+    <hr>
+    Do something productive >> 
+    <a href="{% url 'task-create' %}">Create Task</a>
+
+
+    {% endfor %}
+    <p style='color:red; margin-left: 350px;' >you have {{count}} incomplete Project or Projects</p>
+    
+     
+</div>
+
+
+
+<p style="margin-left: 30px;">Do you want to create a task ?</p>
+<a style="margin-left: 30px;" class = 'btn btn-dark' href="{% url 'task-create' %}">Create Task</a>
+
+</div>

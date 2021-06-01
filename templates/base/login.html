@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+    
+    {% block content %}
+    <div class = 'container'style ='margin-left: auto;  margin-right: auto;  padding: 15%;' >
+         
+    <div class="center card" style = 'width:25rems ; height: 25rems ;'>
+        <div class="card-header" style="background-color:black;color:white">
+            <h2>Login!</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <form action="." method="post">
+                {% csrf_token %}
+                
+
+                <label for=""> <span class="glyphicon glyphicon-user"></span> UserName: </label>
+                {{form.username}}
+                <p></p>
+                <label for=""> <span class="glyphicon glyphicon-option-horizontal"></span> Password: </label>    
+                {{form.password}}
+                <p></p>
+                
+                <button type="submit" class = 'btn btn-dark' style = 'color:white'> <span class="glyphicon glyphicon-log-in"></span>   Login  </button>
+            </form>
+ 
+            </p>
+          <a class = "btn  btn-outline-dark" style = 'color:rgb(34, 33, 33)' href="{% url 'register' %}">  <p style ='color:rgb(104, 103, 114)'>Do you want to register ?</p> </a>  
+ 
+        </div>
+      </div>
+
+    </div>
+          
+            
+
+        
+    {% endblock content %}
+ 

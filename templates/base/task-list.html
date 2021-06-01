@@ -1,0 +1,32 @@
+{% include 'base/froyo_1.html' %}
+<div class='container'>
+
+    <div class="card">
+  <div class="card-header"> 
+      <Label>Project Name:</Label>
+        <h2>{{task.title}}</h2>
+        <hr>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> </h5>
+        <label for="">Project Description:</label>
+       <h6> <p>{{task.content|safe}}</p> </h6>
+        <hr>
+        <label for="">Status:</label>
+    <p class="card-text">
+        
+        {% if task.complete %}
+            Project Completed Successfully
+
+        {% else %}
+            Project is Still Under Progress
+        {% endif %}
+            
+    </p>
+    <hr>
+    
+        <a href="{% url 'task-update' task.id %}"class="btn btn-primary">Update</a>
+         <a href="{% url 'bug-create' %}"class="btn btn-primary">Report a bug ?</a>
+  </div>
+</div>
+</div>

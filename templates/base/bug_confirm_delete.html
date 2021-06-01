@@ -1,0 +1,7 @@
+<p>Are you sure you want to delete {{Bug.title}}</p>
+
+<form action="." method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete?">
+</form>
+<a href="{% url 'home' %}">Go Back</a>

@@ -1,0 +1,61 @@
+{% include 'base/froyo_1.html' %}
+<div class='container'>
+
+    <div class="card">
+  <div class="card-header"> 
+      <Label>Ticket:</Label>
+      <h2>{{bug.ticket}} in {{bug.task}}</h2>
+        <hr>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+        <label for="">Bug Description:</label>
+        <h6><p>{{bug.description|safe}}</p></h6> 
+        <hr>
+        <label for="">Status:</label>
+    <p class="card-text">
+        
+        {% if bug.status %}
+            Ticket Closed
+
+        {% else %}
+           Ticket is Still Under Progress
+        {% endif %}
+            
+    </p>
+    <hr>
+        <Label>Image :</Label> <br>
+
+        
+    {% if bug.image %}
+    
+        <a href="{{bug.image.url}}"><img src="{{bug.image.url}}" alt="Smiley face" width="500" height="500"></a> 
+    <br />
+    {% else %}
+    <p>Image Not Available </p>
+    {% endif %}
+<hr>
+    <label for="">Attachment</label> <br>
+        
+
+        
+    {% if bug.attachment %}
+        
+    <a href="{{bug.attachment.url}}">Download</a>
+    <br />
+    {% else %}
+    <p>Attachment not Available</p>
+    {% endif %}
+    <hr> 
+
+        <a style='margin: left 00px;' href="{% url 'bug-update' bug.id %}"class="btn btn-primary">Update</a>
+        <a href="{% url 'home' %}" class="btn btn-info" >Project Homepage</a>
+  </div>
+</div>
+</div>
+
+
+   
+
+
+

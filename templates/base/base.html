@@ -1,0 +1,68 @@
+<!--inherit template-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  
+    <style>
+    body {background-color: rgba(178, 178, 179, 0.753);}
+
+  </style>
+</head>
+<body>
+    
+
+        <nav class="navbar navbar-expand-lg" style="background-color: #222020de;">
+            <a class="navbar-brand" href="{%url 'index' %}"  style="color: #a4a5a3" >Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{%url 'home' %}" style="color: #a4a5a3">Project Tracker<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'bug-home' %}" style="color: #a4a5a3">Bug Tracker <span>    </span></a>
+                </li>
+              </ul>
+
+              <span>
+
+              
+              <ul class="navbar-nav rm-auto" style ='float: right;'>
+                <li class="nav-item" style ='  margin-left: 0'>
+                    <a class="nav-link" href="{% url 'register' %}" style="color: #a4a5a3">Register</a>
+                  </li>
+
+                  <li class="nav-item" style ='  margin-left: 0'>
+                    <a class="nav-link" href="{% url 'login' %}" style="color: #a4a5a3">Login</a>
+                  </li>
+                </ul>
+              
+              </span>
+
+  
+    
+
+            </div>
+          </nav>
+
+
+    {% block content %}
+    {% endblock content %}
+        
+</body>
+</html>
+

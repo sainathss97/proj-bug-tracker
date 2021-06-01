@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <div class ='container' style = 'margin-left: auto;  margin-right: auto;  padding: 20px;'>
+        <div class="card" style="width: auto; height:auto">
+
+            <div class="card-header" style="background-color:black;color:white">
+                    <h2 class="card-title" >Register here</h5>
+                    <h4 class="card-subtitle mb-2 text-muted">Fellow compadre join us in this community </h6>
+                    
+            </div>
+
+            <div class="card-body">
+                <br>
+              <form action="." method="post">
+                {% csrf_token %}
+               
+                <label> <span class="glyphicon glyphicon-user"></span> UserName:</label>
+                <br>
+                {{form.username}}
+                <p>150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+                <br>
+
+                <label for=""> <span class="glyphicon glyphicon-option-horizontal"></span> Password: </label>    
+                <br>
+                {{form.password1}}
+                <p></p>    
+                <br>
+
+                <label for=""> <span class="glyphicon glyphicon-option-horizontal"></span> Confirm Password: </label>    
+                <br>
+                {{form.password2}}
+                <br>
+                <p>Your password can’t be too similar to your other personal information. <br>
+                    Your password must contain at least 8 characters. <br>
+                    Your password can’t be a commonly used password. <br>
+                    Your password can’t be entirely numeric <br></p>
+                <br>
+                <a class = "btn  btn-outline-dark" style = 'color:rgb(100, 99, 99)'><span class="glyphicon glyphicon-king	"> </span>  Register </a>  
+                    
+            
+            </form>
+            </div>
+          </div>
+    </div>
+
+
+
+{% endblock content %}
+    

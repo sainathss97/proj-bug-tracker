@@ -1,0 +1,52 @@
+{% include 'base/froyo.html' %}
+
+
+
+
+<div class = 'container' style="width: 150 px; height:150 px;">
+
+    <div class="card" >
+           
+        {% for item in bug %}
+            {% if item.status %}
+    
+                <div class='container'>
+                    <p></p>
+                    <p><i><s><H2>{{item}} in {{item.task}} Project </H2>
+                    </s></i>
+                    
+                    <a class = 'btn btn-light' href="{% url 'bug-update' item.id %}">Update</a>
+                    <a class="delete-link btn btn-light" href="{% url 'bug-delete' item.id %}">Delete</a>
+                    <a class = 'btn btn-light' href="{% url 'bug-list' item.id %}">View</a> 
+                 </p>
+                </div>
+                       
+    
+    
+            {% else %}
+            <div class="container">
+                <p> <h2>{{item}} in {{item.task}} Project</h2>
+                    <a class = 'btn btn-light' href="{% url 'bug-update' item.id %}">Update</a>
+                    <a class="delete-link btn btn-light" href="{% url 'bug-delete' item.id %}">Delete</a>
+                    <a class = 'btn btn-light' href="{% url 'bug-list' item.id %}">View</a> 
+                </p>
+                
+            </div>
+            {% endif %}
+                <hr>
+            <p>   </p>
+        {% empty %}
+        No Bugs Found!
+        
+    
+    
+        {% endfor %}
+        <p style='color:red; margin-left: 350px;' >you have {{count}} incomplete Bugs to fix</p>
+        
+         
+    </div>
+    <br>
+
+    <a style="margin-left: auto;" class = 'btn btn-dark' href="{% url 'bug-create' %}">Report a Bug</a>
+    
+

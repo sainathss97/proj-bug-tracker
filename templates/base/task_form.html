@@ -1,0 +1,26 @@
+{% include 'base/froyo.html' %}
+
+
+
+<div class = 'container' style="width: 150 px; height:150 px; ">
+
+    <div class="card" style='padding:10px' >
+<form action="." method="post">
+    {% csrf_token %}
+    {{form.media}}
+    <label >Project Name:</label> <br>
+    {{form.title}}
+<hr>
+    <label for="">Description:</label> <br>
+    <p style="width: 120 px"> {{form.content}} </p>
+    
+<hr>
+    <label for="">Completed:</label> <br>
+    {{form.complete}}
+<hr>
+    <input class = 'btn btn-primary' type="submit" value="Submit">
+</form>
+<br>
+<a class ='btn btn-secondary' style = 'margin-left:500px ; width:150px' href="{% url 'home' %}">Go Back</a>
+</div>
+</div>

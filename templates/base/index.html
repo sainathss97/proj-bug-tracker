@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class='center'  background-color:beige'>
+    
+<div class="jumbotron jumbotron-fluid "  style = 'background-color: rgba(202, 202, 202, 0.808)'>
+    <div class="container">
+      <h1 class="display-4">Welcome to Bugger Tool</h1>
+      <p class="lead">This is just a Project Tracker where even bugs can also be tracked... Looks Cool huh... I will try to add few more things along the way </p>
+    </div>
+  </div>
+
+</div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sapiente neque dolorem. Nesciunt, aliquam officia atque aut doloribus cumque ullam consectetur, saepe reprehenderit, culpa blanditiis esse voluptatibus itaque eveniet deleniti?</p>
+
+  <div class="card center" style="width: 15rem; background-color: rgba(163, 159, 159, 0.87) ">
+    <div class="card-body" >
+        <p>are you new to this site ? 
+            <br>    
+            <a class="btn btn-outline-secondary" href="{% url 'register' %}">Yes</a>
+                <a class="btn btn-outline-secondary" href="{% url 'login' %}">No</a>
+        </p>
+    </div>
+  </div>
+
+
+<body>
+    
+</body>
+
+{% endblock content %}
+    
